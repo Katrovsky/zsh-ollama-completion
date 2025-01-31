@@ -32,7 +32,7 @@ _ollama() {
           compadd -a models
           ;;
         (create)
-          *arguments '-f[Specify Modelfile]:filename:*files'
+          _arguments '-f[Specify Modelfile]:filename:_files'
           ;;
         (push)
           _arguments '1:model name' '2:destination'
