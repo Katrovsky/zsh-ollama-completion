@@ -28,7 +28,7 @@ _ollama() {
       case $line[1] in
         (run|pull|show|rm|cp|stop)
           local -a models
-          models=(${(f)"$(ollama list 2>/dev/null | tail -n +2 | awk -F'\t' '{gsub(/ +$/, "", $1); print $1}')"})
+          models=(${(f)"$(ollama list 2>/dev/null | tail -n +2 | awk '{print $1}')"})
           compadd -a models
           ;;
         (create)
